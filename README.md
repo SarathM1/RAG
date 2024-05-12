@@ -110,3 +110,9 @@ Hybrid Search combines semantic and keyword searches using sparse-dense vectors,
 * **Keyword Search**: Additionally, sparse vectors are utilized for keyword searches, emphasizing the importance of specific words in the search query. By incorporating both semantic and keyword search capabilities, Hybrid Search ensures that search results are precisely matched to the query keywords while also maintaining contextual relevance.
 
 By leveraging Hybrid Search, we anticipate improving the search functionality of this application, providing users with more accurate and meaningful search results, ultimately enhancing the overall user experience.
+
+# Issues in the code
+
+The *Dockerized* application is available in the folder *local-llm-main*. Because of time constraints this application was not completed. The architecture diagram for the implementation is shown below
+
+![Dockerized RAG Application](./architecture_RAG_docker.png)
