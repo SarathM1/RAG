@@ -1,7 +1,6 @@
-# app/Dockerfile
 FROM python:3.9
 
-ARG PROXY=aaz2kor:DEMO%26BOT1234568@rb-proxy-unix-apac.bosch.com:8080
+# ARG PROXY=user:password@domain:8080
 WORKDIR /app
 ARG PROXY
 ENV http_proxy "http://$PROXY"
