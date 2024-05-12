@@ -28,7 +28,11 @@ Design a custom RAG pipeline to answer questions from this textbook -
 
 # Approach
 
-The entire working code for the implementation is available in **RAG_pipeline.ipynb**. There is a link inside the Jupyter notebook to open it in *Google Colab*. The approach taken to implement the solution is explained below.
+## Architecture Diagram for RAG Pipeline
+
+![Architecture](./Architecture_Diagram.png)
+
+The entire working code for the implementation is available in **RAG_pipeline.ipynb**. There is a link inside the Jupyter notebook to open it in *Google Colab*. The approach taken to implement the solution is explained in the above Architecture diagram as well as the text below.
 
 ## Indexing Pipeline
 
@@ -50,9 +54,14 @@ The RAG consists of two parts, namely Information Retrieval and Text Generation.
 * Use [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) for mapping the text to dense vector space.
 * The text along with metadata and embeddings are then pushed to *Chroma* vector database
 
-## Architecture Diagram for RAG Pipeline
+## Chat Pipeline
 
-![Architecture](./Architecture_Diagram.png)
+The chat pipeline comprises of the following main components
+
+* Gradio: Used to create a user interface for testing the RAG application. The UI is available inside the Jupyter Notebook, RAG_pipeline.ipynb
+* Ollama: Inside the jupyter notebook the Ollama Server is started in the background using subprocess library and the opensouce LLM model: [Mistral 7B 0.2 Instruct](https://ollama.com/library/mistral) is downloaded using *ollama pull* command
+* Chroma Vector Database: Chroma is used to store the text, embeddings and the metadata. At the time user queries Chroma is used as retriever to get the similar documents using Cosine Similarity. This data is then passed to the LLM model as context
+* Langchain: Langchain is used as a framework to tie everything together and create the chat pipeline
 
 # Future Scope
 
