@@ -26,6 +26,12 @@ Design a custom RAG pipeline to answer questions from this textbook -
 3. Draft and implement all the necessary APIs using FastAPI or any other python web framework of choice
 4. Produce alternative way to do the RAG without using any library like Langchain, LLamaIndex or Haystack
 
-# Architecture Diagram for RAG Pipeline
+# Approach
+
+## Data preprocessing
+
+The input PDF document seems to have a lot of images and tables along with regular text. Some of these images has text inside them that might be useful for answering questions. Therefore its vital to design an PDF parsing mechanism that deals with Image and table parsing from the PDF.
+
+## Architecture Diagram for RAG Pipeline
 
 ![Architecture](./Architecture_Diagram.png)
